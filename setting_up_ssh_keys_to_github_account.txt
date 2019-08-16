@@ -1,14 +1,15 @@
 1) Assuming you have not created SSH keys before, generate a new SSH key
     $ ssh-keygen -t rsa -C "your_email@example.com"
 
-   Press <enter> on all prompts.
+   Press <enter> on all subsequent prompts.
 
 2) Copy the SSH key to your clipboard.
     $ pbcopy < ~/.ssh/id_rsa.pub
 
 3) On the github account, goto Settings -> SSH and GPG keys -> New SSH key
+   Paste the key...
 
-4) Clone your repositor using SSH.
+4) Clone your repository using SSH.
     If you face "port 22: connection timeout" error, use port 443, and add "ssh." subdomain prefix.
 
     $ git clone ssh://git@ssh.github.com:443/<YOURNAME>/<REPONAME>.git
