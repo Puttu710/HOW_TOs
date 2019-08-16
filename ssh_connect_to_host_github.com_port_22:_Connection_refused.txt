@@ -1,0 +1,3 @@
+User port 443, and add "ssh." subdomain prefix.
+
+$ ssh://git@ssh.github.com:443/<YOURNAME>/<REPONAME>.git
