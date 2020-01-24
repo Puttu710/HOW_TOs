@@ -1,0 +1,27 @@
+sudo apt-get install build-essential
+sudo apt-get install cmake git
+sudo apt-get install pkg-config libavcodec-dev libavformat-dev libswscale-dev
+
+// Download latest OpenCV
+cd opencv/
+mkdir build
+cd build
+
+sudo apt-get install libgstreamer-plugins-base1.0-dev libgstreamer1.0-dev
+sudo apt-get install libgtk2.0-dev
+sudo apt-get install libgtk-3-dev
+sudo apt-get install libpng-dev
+sudo apt-get install libjpeg-dev
+sudo apt-get install libopenexr-dev
+sudo apt-get install libtiff-dev
+sudo apt-get install libwebp-dev
+sudo apt-get install libjasper-dev
+
+// For python3
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DPYTHON3_EXECUTABLE=/usr/bin/python3 -DPYTHON_INCLUDE_DIR=/usr/include/python3.5 -DPYTHON_INCLUDE_DIR2=/usr/include/x86_64-linux-gnu/python3.5m/ -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython3.5m.so.1 -DPYTHON3_NUMPY_INCLUDE_DIRS=/usr/lib/python3/dist-packages/numpy/core/include/ -DOPENCV_GENERATE_PKGCONFIG=ON -DWITH_VTK=OFF -DBUILD_opencv_viz=OFF ..
+
+// For python2.7
+cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr/local -DPYTHON2_EXECUTABLE=/usr/bin/python -DPYTHON_INCLUDE_DIR=/usr/include/python2.7/ -DPYTHON_INCLUDE_DIR2=/usr/include/x86_64-linux-gnu/python2.7/ -DPYTHON_LIBRARY=/usr/lib/x86_64-linux-gnu/libpython2.7.so -DPYTHON3_NUMPY_INCLUDE_DIRS=/usr/lib/python2.7/dist-packages/numpy/core/include/ -DOPENCV_GENERATE_PKGCONFIG=ON -DWITH_VTK=OFF -DBUILD_opencv_viz=OFF ..
+
+make -j4
+sudo make install
