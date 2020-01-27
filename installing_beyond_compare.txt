@@ -1,0 +1,4 @@
+1. Download BeyondCompare from https://www.scootersoftware.com/download.php?zz=dl4
+2. sudo apt-get update
+3. sudo apt-get install gdebi-core -y
+4. sudo gdebi bcompare-4.1.9.21719_amd64.deb
