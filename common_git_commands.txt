@@ -1,0 +1,16 @@
+DELETING A BRANCH:
+  - <remote branch>
+  $ git push --delete origin <branch name>
+  
+  - <local branch>
+  $ git branch -d branch_name
+  
+ MERGING A BRANCH TO MASTER:
+  - switch to master branch in the local repo
+  $ git checkout master
+  - update local master with remote master
+  $ git pull
+  - merge the branch into local master. This may give you conflicts which need to be resolved 
+    and changes committed before moving further.
+  $ git merge <branch_name>
+  $ git push
