@@ -20,6 +20,19 @@
 	TO CREATE A NEW BRANCH :git branch <branch-name>   (doesn't checkout new branch)
 
 	TO DELETE SPECIFIC BRANCH: git branch -d <branch-name>
+	
+	TO KNOW THE SHA VALUE OF EACH BRANCH: git reflog
+	
+	TO RESTORE THE BRANCH: git checkout -b <branch> <sha>
+
+	If your commits are not in your reflog:
+		recovering a branch by reseting your branch to the sha of the commit found: 
+
+git fsck --full --no-reflogs --unreachable --lost-found | grep commit | cut -d\  -f3 | xargs -n 1 git log -n 1 --pretty=oneline > .git/lost-found.txt
+
+	TO SEE CONTENTS OF THE BRANCH: git ls-tree -r --name-only <branch-name>
+
+	COMPARING TWO BRANCHES: git diff branch1..branch2
 
 creating a branch
 
